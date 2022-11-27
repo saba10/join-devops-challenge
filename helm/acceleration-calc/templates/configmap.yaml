@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "acceleration-calc.fullname" . }}-configmap
+  labels:
+    {{- include "acceleration-calc.labels" . | nindent 4 }}
+data:
+  .env: |
+    WEB_PORT={{ .Values.env.web_port }}
+    DV_URL={{ .Values.env.dv_url }}
+    A_URL={{ .Values.env.a_url }}
