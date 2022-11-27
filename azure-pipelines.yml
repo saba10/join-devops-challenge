@@ -15,7 +15,7 @@ pool:
 
 stages:
 - stage: CI
-  displayName: Build stage
+  displayName: CI stage
   jobs:
   - job: CIJob
     steps:
@@ -30,3 +30,12 @@ stages:
         docker push saba10/acceleration-dv:latest
         docker push saba10/acceleration-a:latest
         docker push saba10/acceleration-calc:latest
+
+- stage: CD
+  displayName: CD stage
+  jobs:
+  - job: CDJob
+    steps:
+    - bash: |
+        sshpass
+
