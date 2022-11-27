@@ -14,27 +14,27 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
-- stage: CI
-  displayName: CI stage
-  jobs:
-  - job: CIJob
-    steps:
-    - bash: |
-        docker build ./acceleration-dv/. -t saba10/acceleration-dv:latest
-        docker build ./acceleration-a/. -t saba10/acceleration-a:latest
-        docker build ./acceleration-calc/. -t saba10/acceleration-calc:latest
-        docker images
+# - stage: CI
+#   displayName: CI stage
+#   jobs:
+#   - job: CIJob
+#     steps:
+#     - bash: |
+#         docker build ./acceleration-dv/. -t saba10/acceleration-dv:latest
+#         docker build ./acceleration-a/. -t saba10/acceleration-a:latest
+#         docker build ./acceleration-calc/. -t saba10/acceleration-calc:latest
+#         docker images
 
-    - bash: |
-        docker login -u $(user) -p $(password)
-        docker push saba10/acceleration-dv:latest
-        docker push saba10/acceleration-a:latest
-        docker push saba10/acceleration-calc:latest
+#     - bash: |
+#         docker login -u $(user) -p $(password)
+#         docker push saba10/acceleration-dv:latest
+#         docker push saba10/acceleration-a:latest
+#         docker push saba10/acceleration-calc:latest
 
 - stage: CD
   displayName: CD stage
   pool:
-    vmImage: default
+    vmImage: ec2-minikube-agent
   jobs:
   - job: CDJob
     steps:
