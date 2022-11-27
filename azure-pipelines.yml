@@ -22,4 +22,9 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
   
-- bash: docker login -u $(user) -p $(password)
+- bash: |
+    docker login -u $(user) -p $(password)
+    docker build ./acceleration-dv/. -t saba10/acceleration-dv:latest
+    docker build ./acceleration-a/. -t saba10/acceleration-a:latest
+    docker build ./acceleration-calc/. -t saba10/acceleration-calc:latest
+    docker images
