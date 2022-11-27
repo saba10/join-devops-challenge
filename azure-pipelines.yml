@@ -36,6 +36,11 @@ stages:
   jobs:
   - job: CDJob
     steps:
+    - task: DownloadSecureFile@1
+      name: sshkey
+      displayName: 'Download ssh key'
+      inputs:
+        secureFile: 'ec2.pem'
     - bash: |
-        sshpass
+        ssh -i $(sshkey) ec2-user@44.195.2.139 ls
 
