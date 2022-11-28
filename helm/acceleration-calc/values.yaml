@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: docker.io/shiri277/acceleration-calc
+  repository: docker.io/saba10/acceleration-calc
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
