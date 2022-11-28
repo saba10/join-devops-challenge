@@ -10,4 +10,5 @@ RUN yarn && \
 
 EXPOSE 3002
 
-ENTRYPOINT  yarn dev
+ENTRYPOINT  ["/bin/bash", "-c"]
+CMD ["yarn dev"]
