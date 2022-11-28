@@ -14,6 +14,10 @@ https://github.com/join-com/devops-challenge#instructions
 - Planning for enhancements as I find more time
 
 ## CICD
-- Configured basic CICD using azure devops which is triggered on any change within the repo. Link - https://dev.azure.com/sabm/sabm/_build?definitionId=2 
+- Configured basic CICD using azure devops which is triggered on any change within the main branch. Link - https://dev.azure.com/sabm/sabm/_build?definitionId=2 
 - Consists of two stages - 1.Rebuild the docker image and pushes it to registry with latest changes  2.Perform helm upgrade to deploy the change
 - Ideally, there should be more stages such as unit test, static code analysis, SCA/SAST scans, etc
+
+## IAC
+- Using Terraform, installed k8s dashboard and argocd using helm provider. 
+- Possibly, we can build the k8s cluster from scratch using IAC. 
