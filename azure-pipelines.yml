@@ -44,5 +44,8 @@ stages:
       inputs:
         secureFile: 'ec2.pem'
     - bash: |
-        sudo ls
+        sudo helm upgrade acceleration-dv
+        sudo helm upgrade acceleration-a
+        sudo helm upgrade acceleration-calc
+        sudo helm list
 
