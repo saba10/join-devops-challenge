@@ -57,6 +57,10 @@ ingress:
       paths:
         - path: /calc
           pathType: ImplementationSpecific
+    - host: 44.195.2.139
+      paths:
+        - path: /calc
+          pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
