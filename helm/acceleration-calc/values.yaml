@@ -53,10 +53,10 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: calc.local
-      paths:
-        - path: /calc
-          pathType: ImplementationSpecific
+    # - host: calc.local
+    #   paths:
+    #     - path: /calc
+    #       pathType: ImplementationSpecific
     - host: 44.195.2.139
       paths:
         - path: /calc
