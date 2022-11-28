@@ -33,14 +33,15 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["/bin/bash", "-c"]
-          args: ["WEB_PORT={{ .Values.service.port }} yarn start"]
+          #command: ["/bin/bash", "-c"]
+          #args: ["WEB_PORT={{ .Values.service.port }} yarn start"]
           livenessProbe:
             httpGet:
               path: /health
               port: {{ .Values.service.port }}
-            initialDelaySeconds: 3
-            periodSeconds: 3
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 10
           ports:
             - name: "{{ .Values.service.name }}"
               containerPort: {{ .Values.service.port }}
