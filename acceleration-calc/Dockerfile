@@ -2,10 +2,10 @@ FROM node
 
 MAINTAINER sabasabarish.10@gmail.com
 
-COPY . .
+COPY . /opt/
+WORKDIR /opt/
 
-RUN yarn && \
-    yarn install && \
+RUN yarn install && \
     yarn build
 
 EXPOSE 3000
