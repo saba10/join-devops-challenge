@@ -20,4 +20,4 @@ https://github.com/join-com/devops-challenge#instructions
 
 ## IAC
 - Using Terraform, installed k8s dashboard and argocd using helm provider. 
-- Possibly, we can build the k8s cluster from scratch using IAC. 
+- Possibly we can build the k8s cluster from scratch using IAC. 
