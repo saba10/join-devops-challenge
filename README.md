@@ -11,3 +11,8 @@ https://github.com/join-com/devops-challenge#instructions
 
 ## Enhancements
 - Planning for enhancements as I find more time
+
+## CICD
+- Configured basic CICD using azure devops which is triggered on any change within the repo. Link - https://dev.azure.com/sabm/sabm/_build?definitionId=2 
+- Consists of two stages - 1.Rebuild the docker image and pushes it to registry with latest changes  2.Performs a helm upgrade to deploy the change
+- Ideally, there should be more stages such as unit test, static code analysis, SCA/SAST scans, etc

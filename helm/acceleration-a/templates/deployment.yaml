@@ -33,7 +33,7 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          args: ["WEB_PORT={{ .Values.service.port }} yarn start"]
+          #args: ["WEB_PORT={{ .Values.service.port }} yarn start"]
           livenessProbe:
             httpGet:
               path: /health
