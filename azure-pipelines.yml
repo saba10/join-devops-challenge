@@ -44,8 +44,9 @@ stages:
       inputs:
         secureFile: 'ec2.pem'
     - bash: |
-        sudo -H -u root bash -c "/usr/local/bin/helm upgrade acceleration-dv"
-        sudo -H -u root bash -c "/usr/local/bin/helm upgrade acceleration-a"
-        sudo -H -u root bash -c "/usr/local/bin/helm upgrade acceleration-calc"
+        cd /root/join-devops-challenge/ && git pull origin main:main
+        sudo -H -u root bash -c "/usr/local/bin/helm upgrade acceleration-dv /root/join-devops-challenge/helm/acceleration-dv"
+        sudo -H -u root bash -c "/usr/local/bin/helm upgrade acceleration-a /root/join-devops-challenge/helm/acceleration-a"
+        sudo -H -u root bash -c "/usr/local/bin/helm upgrade acceleration-calc /root/join-devops-challenge/helm/acceleration-calc"
         sudo -H -u root bash -c "/usr/local/bin/helm list"
 
